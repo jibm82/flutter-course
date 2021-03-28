@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'quiz_brain.dart';
 
 QuizBrain quizBrain = new QuizBrain();
@@ -36,6 +37,7 @@ class _QuizPageState extends State<QuizPage> {
       if (questionIndex < quizBrain.questions.length - 1) {
         questionIndex++;
       } else {
+        Alert(context: context, title: "Quizzler", desc: "You reached the end of the game").show();
         questionIndex = 0;
         scoreKeeper = [];
       }
